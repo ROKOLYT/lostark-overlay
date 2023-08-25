@@ -28,15 +28,13 @@ Simple overlay written in python that shows the next boss mechanic using OCR
 
 # Clone this repo
 git clone https://github.com/ROKOLYT/lostark-overlay.git ; cd lostark-overlay
+# Install requirements
+pip install -r requirements.txt
 ```
 Install pytorch-cuda to enable GPU acceleration if you have an NVIDIA GPU
 
 ```bash
 pip3 install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu121
-```
-```bash
-# Install requirements
-pip install -r requirements.txt
 ```
 
 # Usage

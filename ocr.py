@@ -18,19 +18,21 @@ class OCR():
     def __init__(self):
         self.reader = easyocr.Reader(["en"], gpu=True)
         self.screenshot_ratio = 1 # required for monitors with resolutions other than 1080p
+        self.current = "data/current.png"
         self.hp_bbox = None
         self.boss_bbox = None
         self.fail_safe_hp = 0
         self.fail_safe_gate = 0
         self.hp = 0
         self.gate = ''
-        
+      
     def calibrate(self, hp_bbox=None, boss_bbox=None):
         logging.warning("Calibrating")
         
-        self.screenshot()
+        if self.current == CURRENT:
+            self.screenshot()
         
-        image = cv2.imread(CURRENT)
+        image = cv2.imread(self.current)
         
         res = self.reader.readtext(image)
         
@@ -82,11 +84,13 @@ class OCR():
             logging.warning("Calibration complete")
             self.fail_safe_gate = 0
             self.fail_safe_hp = 0
+            return True
         
-    def get_hp(self):
-        self.screenshot(bbox=self.hp_bbox)
+    def get_hp(self) -> int:
+        if self.current == CURRENT:
+            self.screenshot(bbox=self.hp_bbox)
         
-        image = cv2.imread(CURRENT)
+        image = cv2.imread(self.current)
         
         res = self.reader.readtext(image)
         
@@ -105,9 +109,10 @@ class OCR():
         return self.hp
     
     def get_gate(self):
-        self.screenshot(bbox=self.boss_bbox)
+        if self.current == CURRENT:
+            self.screenshot(bbox=self.boss_bbox)
         
-        image = cv2.imread(CURRENT)
+        image = cv2.imread(self.current)
         
         res = self.reader.readtext(image)
         
@@ -129,17 +134,17 @@ class OCR():
     
     def screenshot(self, bbox=None):
         image = ImageGrab.grab(bbox)
-        image.save(CURRENT)
+        image.save(self.current)
         
         # Downscale image to RESOLUTION in order to improve performance
         if bbox is None:
-            image = cv2.imread(CURRENT)
+            image = cv2.imread(self.current)
             self.screenshot_ratio = image.shape[1] / RESOLUTION
             dim = (RESOLUTION, int(image.shape[0] / self.screenshot_ratio))
             image = cv2.resize(image, dim, interpolation=cv2.INTER_AREA)
-            cv2.imwrite(CURRENT, image)
+            cv2.imwrite(self.current, image)
             
-    def match_hp(self, text):
+    def match_hp(self, text: str) -> bool:
         if re.match(HP_PATTERN, text):
                 
                 hp = text.split("x")[1]
@@ -154,7 +159,7 @@ class OCR():
         
         return False
     
-    def match_monster(self, text):
+    def match_monster(self, text: str) -> bool:
         raids = Raids()
         
         for boss in raids.bosses:

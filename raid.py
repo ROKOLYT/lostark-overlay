@@ -1,5 +1,5 @@
 class Mechanic:
-    def __init__(self, description, hp):
+    def __init__(self, description: str, hp: int):
         self.description = description
         self.hp = hp
 
@@ -8,7 +8,7 @@ class Gate:
         self.mechanics = mechanics
         self.names = names
         
-    def get_next_mechanic(self, hp):
+    def get_next_mechanic(self, hp: int) -> Mechanic:
         
         valid_mechanics = [mechanic for mechanic in self.mechanics if hp >= mechanic.hp]
         if valid_mechanics:
@@ -17,7 +17,7 @@ class Gate:
             return Mechanic("Just kill", 1)
 
 class Boss:
-    def __init__(self, name, gates):
+    def __init__(self, name: str, gates):
         self.name = name
         self.gates = gates
 

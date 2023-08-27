@@ -32,9 +32,7 @@ class OCR():
         if self.current == CURRENT:
             self.screenshot()
         
-        image = cv2.imread(self.current)
-        
-        res = self.reader.readtext(image)
+        res = self.reader.readtext(self.current)
         
         self.hp_bbox = hp_bbox
         self.boss_bbox = boss_bbox
@@ -90,9 +88,7 @@ class OCR():
         if self.current == CURRENT:
             self.screenshot(bbox=self.hp_bbox)
         
-        image = cv2.imread(self.current)
-        
-        res = self.reader.readtext(image)
+        res = self.reader.readtext(self.current)
         
         for r in res:
             text = r[1].lower().replace(" ", "")
@@ -112,9 +108,7 @@ class OCR():
         if self.current == CURRENT:
             self.screenshot(bbox=self.boss_bbox)
         
-        image = cv2.imread(self.current)
-        
-        res = self.reader.readtext(image)
+        res = self.reader.readtext(self.current)
         
         for r in res:
             text = r[1].lower().replace(" ", "")

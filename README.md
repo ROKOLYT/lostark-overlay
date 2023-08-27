@@ -5,6 +5,7 @@
 Simple overlay written in python that shows the next boss mechanic using OCR
 
 [![pytest](https://github.com/ROKOLYT/lostark-overlay/actions/workflows/pytest.yml/badge.svg)](https://github.com/ROKOLYT/lostark-overlay/actions/workflows/pytest.yml)
+[![License: GNU](https://img.shields.io/badge/License-GNU-yellow.svg)](https://github.com/ROKOLYT/lostark-overlay/blob/main/LICENSE)
 
 - [Features](#features)
 - [How it works](#how-it-works)

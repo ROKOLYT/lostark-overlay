@@ -155,7 +155,7 @@ class Raids:
             Mechanic("x110 Hide", 110),
             Mechanic("x85 Red Hole", 85),
             Mechanic("x55 Ghost", 55),
-            Mechanic("x30 Red Hole", 30)
+            Mechanic("x30 Red Hole", 30),
             Mechanic("x0 Destruction", 0)],
                         ["TBA"])
         akkan_g3 = Gate([
@@ -171,7 +171,7 @@ class Raids:
             Mechanic("x235 Akkan Smash 1", 235),
             Mechanic("x200 Water Park", 200),
             Mechanic("x135 Akkan Smash 2", 135)],
-                                ["TBA"])
+                                ["Plague Legion Commander"])
         
         self.akkan = Boss("akkan", [akkan_g1, akkan_g2, akkan_g3, akkan_hard_phase])
         

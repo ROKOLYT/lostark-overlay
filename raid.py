@@ -116,7 +116,63 @@ class Raids:
         clown_bingo = Gate([
             Mechanic("Just kill", 1)],
                            ["Encore-Desiring Kakul-Saydon"])
-
+        
         self.clown = Boss("clown", [clown_g1, clown_g2, clown_g3, clown_bingo])
-
-        self.bosses = [self.brel, self.valtan, self.clown]
+        
+        kayangel_g1 =  Gate([
+            Mechanic("x55 Pizza/Safe spots", 55),
+            Mechanic("x25 Orbs", 25)],
+                            ["TBA"])
+        kayangel_g2 = Gate([
+            Mechanic("x55 Lightning pillars", 55)],
+                           ["TBA"])
+        kayangel_g3 = Gate([
+            Mechanic("x60 Rotate anti-clockwise", 60),
+            Mechanic("x40 Counter", 40),
+            Mechanic("x16 Rings", 16)],
+                           ["TBA"])
+        kayangel_g4 = Gate([
+            Mechanic("x180 Slashes", 180),
+            Mechanic("x140 Light rays", 140),
+            Mechanic("x100 Orbs/Shade pillars", 100),
+            Mechanic("x60 Clones", 60)],
+                           ["TBA"])
+        
+        self.kayangel = Boss("kayangel", [kayangel_g1, kayangel_g2, kayangel_g3, kayangel_g4])
+        
+        akkan_g1 = Gate([
+            Mechanic("x140 8 Tumor Orbs/Spear", 140),
+            Mechanic("x128 Cleanse Yellow", 128),
+            Mechanic("x112 Orb Grab", 112),
+            Mechanic("x75 Stop Mobs", 75),
+            Mechanic("x50 Inana Phase", 50),
+            Mechanic("x20 Remove Shield/Bells", 20)],
+                        ["TBA"])
+        akkan_g2 = Gate([
+            Mechanic("x175 Tentacles", 175),
+            Mechanic("x160 Ghost", 160),
+            Mechanic("x140 Red Hole", 140),
+            Mechanic("x110 Hide", 110),
+            Mechanic("x85 Red Hole", 85),
+            Mechanic("x55 Ghost", 55),
+            Mechanic("x30 Red Hole", 30)
+            Mechanic("x0 Destruction", 0)],
+                        ["TBA"])
+        akkan_g3 = Gate([
+            Mechanic("x200 Stagger", 200),
+            Mechanic("x165 Line Delivery & Stagger", 165),
+            Mechanic("x140 Star or Hexagon", 140),
+            Mechanic("x139 - x31 Random Party Gimmicks", 139),
+            Mechanic("x30 Arena Break", 30),
+            Mechanic("x0 Destruction", 0)]
+                        ["TBA"])
+        akkan_hard_phase = Gate([
+            Mechanic("x300 Extra Phase Begins", 300),
+            Mechanic("x235 Akkan Smash 1", 235),
+            Mechanic("x200 Water Park", 200),
+            Mechanic("x135 Akkan Smash 2", 135)],
+                                ["TBA"])
+        
+        self.akkan = Boss("akkan", [akkan_g1, akkan_g2, akkan_g3, akkan_hard_phase])
+        
+        self.bosses = [self.brel, self.valtan, self.clown, self.kayangel, self.akkan]

@@ -10001,3 +10001,11 @@ data/current.png
 .venv/Lib/site-packages/setuptools-65.5.0.dist-info/REQUESTED
 .venv/Lib/site-packages/setuptools-65.5.0.dist-info/top_level.txt
 .venv/Lib/site-packages/setuptools-65.5.0.dist-info/WHEEL
+.idea/.gitignore
+.idea/aws.xml
+.idea/deployment.xml
+.idea/lostark-overlay.iml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/inspectionProfiles/Project_Default.xml

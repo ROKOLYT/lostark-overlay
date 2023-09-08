@@ -164,7 +164,7 @@ class Raids:
             Mechanic("x140 Star or Hexagon", 140),
             Mechanic("x139 - x31 Random Party Gimmicks", 139),
             Mechanic("x30 Arena Break", 30),
-            Mechanic("x0 Destruction", 0)]
+            Mechanic("x0 Destruction", 0)],
                         ["TBA"])
         akkan_hard_phase = Gate([
             Mechanic("x300 Extra Phase Begins", 300),
